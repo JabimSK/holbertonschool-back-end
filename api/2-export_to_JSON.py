@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     response = requests.get(
         f"{API_URL}/users/{EMPLOYEE_ID}/todos",
-        params={"_expand": "user"}   
+        params={"_expand": "user"}
     )
     data = response.json()
     if not len(data):
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         task_dict = {
             "task": task["title"],
             "completed": task["completed"],
-            "username": task["user"]["username"]   
+            "username": task["user"]["username"]
         }
         user_tasks[EMPLOYEE_ID].append(task_dict)
 
